@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAINS - Connect With Us</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}html,body{width:100%;height:100%;margin:0}
+body{overflow:hidden;font-family:Inter,Arial,sans-serif;background:#3b0000}
+.page{position:fixed;inset:0;overflow:hidden;background:radial-gradient(circle at 50% 15%,rgba(255,70,70,.20),transparent 30%),linear-gradient(135deg,#3b0000 0%,#800000 50%,#ad000d 100%);color:#fff}
+.tech-grid{position:absolute;inset:-60px;z-index:0;pointer-events:none;background-size:50px 50px;background-image:linear-gradient(to right,rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.045) 1px,transparent 1px);animation:gridMove 45s linear infinite}
+@keyframes gridMove{0%{background-position:0 0}100%{background-position:50px 50px}}
+#aiCanvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.content{position:relative;z-index:5;width:min(760px,92vw);height:100vh;margin:0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px 0}
+.logoBox{display:flex;align-items:center;justify-content:center;margin-bottom:clamp(12px,2vh,22px)}
+.logoBox img{width:clamp(100px,12vw,150px);max-height:90px;object-fit:contain;filter:drop-shadow(0 0 18px rgba(255,255,255,.18))}
+.title{margin:0;text-align:center;font-size:clamp(24px,3.4vw,44px);line-height:1.1;font-weight:900;letter-spacing:.04em;text-transform:uppercase;text-shadow:0 0 18px rgba(255,70,70,.30)}
+.subtitle{margin:9px 0 0;color:#ffe0e0;text-align:center;font-size:clamp(13px,1.5vw,20px);font-weight:600}
+.socialButtons{width:100%;max-width:650px;margin-top:clamp(25px,4vh,42px);display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(12px,2vw,20px)}
+.socialButton{position:relative;overflow:hidden;min-height:clamp(82px,10vh,112px);padding:16px 22px;display:flex;align-items:center;justify-content:center;gap:16px;border:2px solid #ff3344;border-radius:16px;background:#fff;color:#800000;text-decoration:none;font-size:clamp(16px,1.7vw,22px);font-weight:800;box-shadow:0 6px 0 rgba(30,0,0,.85),0 0 15px rgba(255,51,68,.30);transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.socialButton::before{content:'';position:absolute;top:-50%;left:-60%;width:210%;height:200%;background:linear-gradient(45deg,transparent,rgba(255,255,255,.60),transparent);transform:rotate(45deg) translateY(-100%);transition:transform .8s ease}
+.socialButton:hover::before,.socialButton:focus::before,.socialButton.selected::before{transform:rotate(45deg) translateY(100%)}
+.socialButton:hover,.socialButton:focus,.socialButton.selected{outline:none;transform:translateY(-4px) scale(1.015);box-shadow:0 9px 0 rgba(30,0,0,.9),0 0 30px rgba(255,100,100,.70)}
+.socialButton i{position:relative;z-index:2;font-size:clamp(30px,3.5vw,46px)}
+.socialButton span{position:relative;z-index:2}
+.footer{position:absolute;bottom:18px;left:0;right:0;z-index:5;text-align:center;color:rgba(255,255,255,.70);font-size:clamp(10px,1vw,13px);letter-spacing:.08em}
+@media(max-width:600px){.content{width:90vw}.socialButtons{grid-template-columns:1fr;max-width:500px}.socialButton{min-height:70px}.footer{bottom:10px}}
+@media(max-height:650px){.content{padding-top:15px;padding-bottom:30px}.logoBox{margin-bottom:7px}.logoBox img{width:90px;max-height:65px}.title{font-size:clamp(20px,3vw,32px)}.socialButtons{margin-top:18px;gap:10px}.socialButton{min-height:58px;padding:10px 16px}.socialButton i{font-size:28px}}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="tech-grid"></div>
+<canvas id="aiCanvas"></canvas>
+<main class="content">
+<div class="logoBox"><img src="image/logo.png" alt="SAINS Logo"></div>
+<h1 class="title">CONNECT WITH SAINS</h1>
+<p class="subtitle">Digital Partners For Life</p>
+<div class="socialButtons">
+<a class="socialButton" href="https://www.facebook.com/share/19bzchG1uj/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" data-index="0"><i class="fa-brands fa-facebook-f"></i><span>Facebook</span></a>
+<a class="socialButton" href="https://www.instagram.com/sains_my?stkn=MXAyYnI2M2VpYjhqdw==" target="_blank" rel="noopener noreferrer" data-index="1"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a>
+<a class="socialButton" href="https://www.sains.com.my/" target="_blank" rel="noopener noreferrer" data-index="2"><i class="fa-solid fa-globe"></i><span>SAINS Website</span></a>
+<a class="socialButton" href="https://play.kahoot.it/v2/?quizId=99dc5319-1ef3-4898-8102-185fcff0c91b&hostId=c0a16641-a811-4513-95ad-75fc15c5309b" target="_blank" rel="noopener noreferrer" data-index="3"><i class="fa-solid fa-gamepad"></i><span>Play Game</span></a>
+</div>
+</main>
+<div class="footer">SARAWAK INFORMATION SYSTEMS SDN. BHD. (SAINS)</div>
+</div>
+<script>
+const canvas=document.getElementById('aiCanvas'),ctx=canvas.getContext('2d');
+let nodes=[],w=0,h=0;
+function resize(){const d=Math.min(devicePixelRatio||1,2);w=innerWidth;h=innerHeight;canvas.width=w*d;canvas.height=h*d;canvas.style.width=w+'px';canvas.style.height=h+'px';ctx.setTransform(d,0,0,d,0,0);nodes=[];const n=Math.max(24,Math.min(55,Math.floor(w/25)));for(let i=0;i<n;i++)nodes.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:Math.random()*2+1})}
+function draw(){ctx.clearRect(0,0,w,h);for(let i=0;i<nodes.length;i++){for(let j=i+1;j<nodes.length;j++){const dx=nodes[i].x-nodes[j].x,dy=nodes[i].y-nodes[j].y,dist=Math.hypot(dx,dy);if(dist<155){ctx.beginPath();ctx.moveTo(nodes[i].x,nodes[i].y);ctx.lineTo(nodes[j].x,nodes[j].y);ctx.strokeStyle='rgba(255,120,120,'+((1-dist/155)*.25)+')';ctx.stroke()}}}nodes.forEach(n=>{n.x+=n.vx;n.y+=n.vy;if(n.x<-10||n.x>w+10)n.vx*=-1;if(n.y<-10||n.y>h+10)n.vy*=-1;ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,Math.PI*2);ctx.fillStyle='rgba(255,180,180,.65)';ctx.fill()});requestAnimationFrame(draw)}
+addEventListener('resize',resize);resize();draw();
+
+const buttons=[...document.querySelectorAll('.socialButton')];let selected=0;
+function select(){buttons.forEach((b,i)=>b.classList.toggle('selected',i===selected));buttons[selected].focus({preventScroll:true})}
+document.addEventListener('keydown',e=>{
+if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();selected=(selected+1)%buttons.length;select()}
+else if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();selected=(selected-1+buttons.length)%buttons.length;select()}
+else if(e.key==='Enter'||e.key===' '){e.preventDefault();buttons[selected].click()}
+});
+select();
+</script>
+</body>
+</html>
